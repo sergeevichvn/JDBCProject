@@ -23,7 +23,7 @@ import ru.tritec.jdbcproject.pojo.User;
 
 public class Runner {
 	private static final String NAME_DB = "db.db";
-	private static final String URL = "http://torrent.aqproject.ru/account/info?id=";
+	private static final String URL = "http://tst.ru/account/info?id=";
 	
 	public static void main(String[] args) throws ClassNotFoundException, SQLException, IOException, InterruptedException {
 
@@ -37,7 +37,7 @@ public class Runner {
 		List<User> users = getAllUsers();
 		
 		for(User u: users)
-			if(u.getUser_class().contains("Модератор"))
+			if(u.getUser_class().contains("ГЊГ®Г¤ГҐГ°Г ГІГ®Г°"))
 				System.out.println("Login: " + u.getNik() + "; User Class: " + u.getUser_class());
 
 	}
@@ -66,11 +66,11 @@ public class Runner {
 			
 			for(Element e: elements){
 				String text = e.text();
-				if(text.contains("Мужской")){
-					user.setSex("Мужской");
+				if(text.contains("ГЊГіГ¦Г±ГЄГ®Г©")){
+					user.setSex("ГЊГіГ¦Г±ГЄГ®Г©");
 					break;
-				}else if (text.contains("Женский")){
-					user.setSex("Женский");
+				}else if (text.contains("Г†ГҐГ­Г±ГЄГЁГ©")){
+					user.setSex("Г†ГҐГ­Г±ГЄГЁГ©");
 					break;
 				}else 
 					user.setSex("unknown");
@@ -81,7 +81,7 @@ public class Runner {
 	}
 
 	private static void addUserInBD(User user) throws SQLException, ClassNotFoundException{
-		System.out.println("Добавляем в БД");
+		System.out.println("Г„Г®ГЎГ ГўГ«ГїГҐГ¬ Гў ГЃГ„");
 		Class.forName("org.sqlite.JDBC"); 
 		Connection con = null;
 		con = DriverManager.getConnection("jdbc:sqlite:"+NAME_DB);
