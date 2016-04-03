@@ -1,0 +1,21 @@
+<html>
+	<head>
+		<title>Header</title>
+		<meta charset="utf-8">
+	</head>
+	<body>
+		<ul>
+			<li><img src="https://www.google.ru/images/branding/product/ico/googleg_lodp.ico" height=16 width=16 /><a href="http://www.google.com">oogle</a></li>
+			<li><img src="https://yastatic.net/morda-logo/i/apple-touch-icon/ru-76x76.png" height=16 width=16 /><a href="http://www.yandex.ru">ндекс</a></li>
+			<li><img src="https://limg.imgsmail.ru/splash/v/i/favicon.d0881808e042e7525b67e7fa8b1e2762daf9115b.ico" height=16 width=16 /><a href="http://www.mail.ru">Mail</a></li>
+		</ul>
+		<br>
+		<p id="text">Введите свое имя:</p>
+		<input name="name" id="name"/><button name="OK" onClick=doMagic()>OK</button>
+	</body>
+	<script>
+		function doMagic(){
+			document.getElementById('text').innerHTML = "Привет, " + document.getElementById('name').value;
+		}
+	</script>
+</html>
